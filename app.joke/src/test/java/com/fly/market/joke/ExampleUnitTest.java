@@ -1,4 +1,4 @@
-package market.libui;
+package com.fly.market.joke;
 
 import org.junit.Test;
 

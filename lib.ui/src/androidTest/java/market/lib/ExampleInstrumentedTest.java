@@ -1,4 +1,4 @@
-package market.libui;
+package market.lib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
