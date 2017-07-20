@@ -37,7 +37,7 @@ public abstract class BaseReq {
         HttpLoggingInterceptor loggingInterceptor=new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                Log.d(TAG,"OkHttp====Message:"+message);
+                Log.e(TAG,"OkHttp====Message:"+message);
             }
         });
         loggingInterceptor.setLevel(level);

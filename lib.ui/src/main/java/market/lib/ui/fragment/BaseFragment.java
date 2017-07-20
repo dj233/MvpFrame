@@ -60,7 +60,7 @@ public abstract class BaseFragment extends Fragment {
         mSuccessView = View.inflate(getContext(), getLayoutId(), null);
         ButterKnife.bind(this, mSuccessView);
         mEmptyRootView.addView(mSuccessView);
-        initCommonView();
+//        initCommonView();
     }
 
     public abstract int getLayoutId();
@@ -107,7 +107,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void onRetryClick(){
-        setState(LoadedResult.LOADING);
+//        setState(LoadedResult.LOADING);
     }
 
     public void setState(LoadedResult loadedResult) {
@@ -118,15 +118,16 @@ public abstract class BaseFragment extends Fragment {
 
     private void refreshViewByState() {
 
-        //控制假数据视图的显示隐藏
-        if (mCurState == STATE_UNCONNECT_ERROR_FAKE_DATA) {
-            mErrorFakeView.setVisibility(View.VISIBLE);
-        } else if (mCurState == STATE_CONNECT_ERROR_FAKE_DATA){
-            mErrorFakeView.setVisibility(View.VISIBLE);
-        } else{
+        //数据加载完成,假如数据加载又成功了,而且没有初始化过成功视图
+        if (mCurState == STATE_SUCCESS) {
+            mSuccessView.setVisibility(View.VISIBLE);
+            mEmptyView.setVisibility(View.GONE);
+            mLoadingView.setVisibility(View.GONE);
+            mSuccessView.setVisibility(View.GONE);
             mErrorFakeView.setVisibility(View.GONE);
+        } else {
+            mSuccessView.setVisibility(View.GONE);
         }
-
 
         //控制Error视图的显示隐藏
         if (mCurState == STATE_ERROR) {
@@ -154,12 +155,7 @@ public abstract class BaseFragment extends Fragment {
         }
 
 
-        //数据加载完成,假如数据加载又成功了,而且没有初始化过成功视图
-        if (mCurState == STATE_SUCCESS) {
-            mSuccessView.setVisibility(View.VISIBLE);
-        } else {
-            mSuccessView.setVisibility(View.GONE);
-        }
+
 
     }
 
