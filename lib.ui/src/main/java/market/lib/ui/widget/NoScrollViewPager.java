@@ -1,4 +1,4 @@
-package market.lib.ui;
+package market.lib.ui.widget;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
