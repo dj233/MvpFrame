@@ -5,12 +5,13 @@ import java.util.List;
 public class BaseListContract {
 
     public interface IView<T>{
-        public void onAdd(List<T> data);
-        public void onRefresh(List<T> data);
+        void onAdd(List<T> data);
+        void onRefresh(List<T> data);
+        void onError(Throwable e);
     }
 
     public interface IPresenter{
-        public void refresh(int pageSize);
-        public void add(int page, int pageSize);
+        void refresh(int pageSize);
+        void add(int page, int pageSize);
     }
 }

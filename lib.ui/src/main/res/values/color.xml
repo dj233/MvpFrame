@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="fake_data_text">#666666</color>
+    <color name="divider_comment">#E1E1E1</color>
+
+    <!-- 头部文字用色：用于App头部渠道名称(非当前状态)-->
+    <color name="text_channel_unselect">#FFCDD2</color>
+    <!-- 头部文字用色：用于App头部渠道名称(当前状态)-->
+    <color name="text_channel_select">#FFFFFF</color>
+
+    <!-- 列表字体颜色 -->
+    <color name="item_h1">#1f1f1f</color>
+    <color name="item_h2">#242424</color>
+    <color name="item_h3">#2f2f2f</color>
+    <color name="item_h4">#353535</color>
+    <color name="item_h5">#3f3f3f</color>
+
+
+</resources>

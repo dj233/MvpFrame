@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--关键在这里↓-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            style="@style/match_match"
+            app:collapsedTitleGravity="center"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_info_detail"
+                style="@style/match_match"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_newsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#00000000"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView style="@style/match_match" android:padding="12dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout style="@style/match_wrap" android:orientation="vertical">
+            <TextView android:id="@+id/tv_info_title"  style="@style/item_h2" />
+            <TextView android:id="@+id/tv_info_description"  style="@style/item_h3" />
+            <TextView android:id="@+id/tv_info_content"  style="@style/item_h4" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        style="@style/wrap_wrap"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end"
+        android:src="@drawable/ic_add"
+        android:layout_margin="20dp"
+        android:clickable="true"/>
+
+</android.support.design.widget.CoordinatorLayout>
