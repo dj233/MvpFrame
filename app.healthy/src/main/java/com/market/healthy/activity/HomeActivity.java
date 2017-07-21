@@ -24,6 +24,7 @@ public class HomeActivity extends FragmentActivity {
     private Fragment[] fragments;
     private int fragIndex;
 
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

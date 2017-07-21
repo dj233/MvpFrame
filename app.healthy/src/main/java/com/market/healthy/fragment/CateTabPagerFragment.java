@@ -2,7 +2,7 @@ package com.market.healthy.fragment;
 
 import android.os.Bundle;
 
-import com.market.healthy.activity.CateTabPagerAdapter;
+import com.market.healthy.adapter.CateTabPagerAdapter;
 import com.market.healthy.entity.Cate;
 import com.market.healthy.presenter.cateTab.CateTabPagerContract;
 import com.market.healthy.presenter.cateTab.CateTabPagerPresenter;

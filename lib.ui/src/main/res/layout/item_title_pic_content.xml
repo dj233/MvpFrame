@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    style="@style/match_wrap"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    android:background="@drawable/bg_item_divider"
+    >
+
+    <TextView
+        android:id="@+id/tv_item_title"
+        android:text="一些特殊体质的人就不宜常吃粗粮"
+        style="@style/item_h2" />
+
+    <ImageView
+        android:id="@+id/iv_item_img"
+        style="@style/item_img_middle_360x180" />
+
+    <TextView
+        android:id="@+id/tv_item_description"
+        android:text="警惕！这6类人吃粗粮易使癌细胞疯长 《这是真的么》第23期：一个部位长肉竟是癌症先兆时长：5'58''播放：682384来源：腾讯"
+        style="@style/item_h3" />
+
+</LinearLayout>

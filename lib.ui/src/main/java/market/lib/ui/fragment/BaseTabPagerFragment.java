@@ -9,16 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import market.lib.R;
 import market.lib.ui.adapter.TabPageAdapter;
+import market.lib.ui.presenter.BaseTabContract;
 import market.lib.ui.widget.NoScrollViewPager;
 
-public abstract class BaseTabPagerFragment<T> extends Fragment implements View.OnClickListener{
+public abstract class BaseTabPagerFragment<T> extends Fragment implements View.OnClickListener,BaseTabContract.IView<T>{
 
     private TabLayout tabs;
     private NoScrollViewPager viewPager;
     private TabPageAdapter<T> tabPagerAdapter;
     private FloatingActionButton fbShare;
+    private BaseTabContract.IPresenter presenter;
 
     @Nullable
     @Override
@@ -35,7 +39,8 @@ public abstract class BaseTabPagerFragment<T> extends Fragment implements View.O
         fbShare = view.findViewById(R.id.fab_share);
         fbShare.setOnClickListener(this);
         bindTabPager();
-        reqTabs();
+        presenter = getPresenter();
+        presenter.reqTabs();
     }
 
     private void bindTabPager(){
@@ -60,6 +65,11 @@ public abstract class BaseTabPagerFragment<T> extends Fragment implements View.O
     }
 
     @Override
+    public void onError(Throwable e) {
+
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.fab_share){
@@ -72,6 +82,13 @@ public abstract class BaseTabPagerFragment<T> extends Fragment implements View.O
         viewPager.setAdapter(tabPagerAdapter);
     }
 
-    protected abstract void reqTabs();
+    protected abstract BaseTabContract.IPresenter getPresenter();
+    protected abstract TabPageAdapter<T> getTabPagerAdapter(List<T> tabs);
+
+    @Override
+    public void onTabLoad(List<T> tabs) {
+
+    }
+
 
 }

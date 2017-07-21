@@ -36,7 +36,6 @@ public abstract class BaseFragment extends Fragment {
     public View         mLoadingView;//加载中视图
     public View         mEmptyView;//空视图
     public View         mErrorView;//错误视图
-    public LinearLayout mErrorFakeView;//错误假数据视图
     public View mSuccessView;//成功视图
 
     @Nullable
@@ -89,10 +88,7 @@ public abstract class BaseFragment extends Fragment {
             }
         });
 
-        //初始化假数据视图
-        mErrorFakeView = (LinearLayout) View.inflate(activity, R.layout.pager_fake, null);
-        mEmptyRootView.addView(mErrorFakeView);
-        TextView retry = (TextView) mErrorFakeView.findViewById(R.id.error_btn_retry);
+        TextView retry = (TextView) mErrorView.findViewById(R.id.error_btn_retry);
         retry.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         retry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +103,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void onRetryClick(){
-//        setState(LoadedResult.LOADING);
+        setState(LoadedResult.LOADING);
     }
 
     public void setState(LoadedResult loadedResult) {
@@ -124,7 +120,6 @@ public abstract class BaseFragment extends Fragment {
             mEmptyView.setVisibility(View.GONE);
             mLoadingView.setVisibility(View.GONE);
             mSuccessView.setVisibility(View.GONE);
-            mErrorFakeView.setVisibility(View.GONE);
         } else {
             mSuccessView.setVisibility(View.GONE);
         }
@@ -140,6 +135,7 @@ public abstract class BaseFragment extends Fragment {
         }
         //控制Loading视图的显示隐藏
         if (mCurState == STATE_LOADING) {
+            mErrorView.setVisibility(View.GONE);
             mLoadingView.setVisibility(View.VISIBLE);
             mEmptyView.setVisibility(View.GONE);
             mSuccessView.setVisibility(View.GONE);
@@ -150,6 +146,9 @@ public abstract class BaseFragment extends Fragment {
         //控制Empty视图的显示隐藏
         if (mCurState == STATE_EMPTY) {
             mEmptyView.setVisibility(View.VISIBLE);
+            mErrorView.setVisibility(View.GONE);
+            mEmptyView.setVisibility(View.GONE);
+            mSuccessView.setVisibility(View.GONE);
         } else {
             mEmptyView.setVisibility(View.GONE);
         }

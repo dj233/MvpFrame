@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">范文大全</string>
+
+    <string name="app_intro_short">海量范文，名师点评</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
