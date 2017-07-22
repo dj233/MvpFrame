@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MvpFrame.iml" filepath="$PROJECT_DIR$/MvpFrame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.healthy/app.healthy.iml" filepath="$PROJECT_DIR$/app.healthy/app.healthy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.joke/app.joke.iml" filepath="$PROJECT_DIR$/app.joke/app.joke.iml" />
+      <module fileurl="file://$PROJECT_DIR$/github.iml" filepath="$PROJECT_DIR$/github.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib.data/lib.data.iml" filepath="$PROJECT_DIR$/lib.data/lib.data.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib.ui/lib.ui.iml" filepath="$PROJECT_DIR$/lib.ui/lib.ui.iml" />
     </modules>

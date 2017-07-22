@@ -1,4 +1,4 @@
-package com.nbt.net;
+package com.nbt.entity;
 
 public class Joke {
 

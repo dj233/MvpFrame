@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public abstract class BaseReq {
     private static final String TAG = BaseReq.class.getSimpleName();
-    private static final boolean NetLogOpen = true;
+    private static final boolean NetLogOpen = false;
 
     private static final int DEFAULT_TIME_OUT = 30;
     private static final int DEFAULT_WRITE_TIME_OUT = 60;

@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">app.joke</string>
+    <string name="app_name">开心一刻</string>
     <string name="title_activity_home">笑口常开</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">最新</string>
+    <string name="title_notifications">笑话</string>
+    <string name="title_dashboard">趣图</string>
 </resources>

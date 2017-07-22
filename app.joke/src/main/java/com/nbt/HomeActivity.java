@@ -3,13 +3,21 @@ package com.nbt;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity {
+import com.nbt.fragment.JokePicFragment;
+import com.nbt.fragment.JokeTxtFragment;
+import com.nbt.fragment.RandPicFragment;
 
-    private TextView mTextMessage;
+public class HomeActivity extends FragmentActivity {
+
+    private Fragment[] fragments;
+    private int fragIndex;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,13 +26,13 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    switchFragment(0);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    switchFragment(1);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    switchFragment(2);
                     return true;
             }
             return false;
@@ -36,10 +44,40 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        initView();
     }
 
+    private void initView(){
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        initFragments();
+    }
+
+    private void switchFragment(int index){
+        if(index == fragIndex){
+            return;
+        }
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(!fragments[index].isAdded()){
+            transaction.add(R.id.container,fragments[index]);
+        }
+        transaction.hide(fragments[fragIndex]);
+        transaction.show(fragments[index]).commit();
+        fragIndex = index;
+    }
+
+    private void initFragments(){
+        fragments = getFragments();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container,fragments[0])
+                .show(fragments[0])
+                .commit();
+        fragIndex = 0;
+    }
+
+    protected Fragment[] getFragments(){
+        return new Fragment[]{new RandPicFragment(),new JokePicFragment(),new JokeTxtFragment()};
+    }
 }

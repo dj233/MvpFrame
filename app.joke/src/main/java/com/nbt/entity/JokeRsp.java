@@ -1,12 +1,14 @@
-package com.nbt.net;
+package com.nbt.entity;
+
+import com.nbt.entity.Joke;
 
 import java.util.List;
 
-public class JokeRsp {
+public class JokeRsp<T> {
 
     private int error_code;
     private String reason;
-    private Result result;
+    private T result;
 
     public int getError_code() {
         return error_code;
@@ -24,31 +26,12 @@ public class JokeRsp {
         this.reason = reason;
     }
 
-    public Result getResult() {
+    public T getResult() {
         return result;
     }
 
-    public void setResult(Result result) {
+    public void setResult(T result) {
         this.result = result;
-    }
-
-    public static class Result {
-        private List<Joke> data;
-
-        public List<Joke> getData() {
-            return data;
-        }
-
-        public void setData(List<Joke> data) {
-            this.data = data;
-        }
-
-        @Override
-        public String toString() {
-            return "Result{" +
-                    "data=" + data +
-                    '}';
-        }
     }
 
     @Override

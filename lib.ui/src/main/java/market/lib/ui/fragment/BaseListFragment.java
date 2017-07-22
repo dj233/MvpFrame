@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.sak.ultilviewlib.UltimateRefreshView;
 import com.sak.ultilviewlib.interfaces.OnFooterRefreshListener;
@@ -33,6 +34,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getIntentValue(getArguments());
         overrideParentValue();
         refreshView = (UltimateRefreshView) view.findViewById(R.id.refresh_view);
         initRefreshAdapter();
@@ -43,9 +45,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
         recyclerView.setAdapter(mAdapter);
         recyclerView.setLayoutManager(initLayoutManager());
         mPresenter = initPresenter();
-        mPresenter.refresh(pageSize);
-
-        getIntentValue(getArguments());
+        mPresenter.add(page,pageSize);
     }
 
     protected void overrideParentValue(){
@@ -83,7 +83,10 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
 
     @Override
     public void onError(Throwable e) {
+        refreshView.onFooterRefreshComplete();
+        refreshView.onHeaderRefreshComplete();
 //        setState(LoadedResult.ERROR);
+        Toast.makeText(getContext(),R.string.unable_to_connect_network,Toast.LENGTH_SHORT).show();
     }
 
     @Override
