@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    style="@style/match_wrap"
+    android:background="@drawable/bg_item_divider"
+    android:padding="5dp"
+    >
+    <ImageView android:id="@+id/iv_item_book_src"
+        style="@style/item_img_left_120x160"/>
+    <LinearLayout
+        style="@style/match_wrap"
+        android:orientation="vertical"
+        >
+        <TextView android:id="@+id/tv_item_book_name" android:padding="3dp"
+            style="@style/item_h2" android:text="北之魔女与不死人偶"/>
+        <TextView android:id="@+id/tv_item_book_des" android:padding="3dp" android:lines="3" android:ellipsize="end"
+            style="@style/item_h3" android:text="北之魔女与不死人偶漫画 ，发情的白熊女和腹黑女战士。欢迎在新动漫漫画网观看北之魔女与不死人偶漫画"/>
+        <TextView android:id="@+id/tv_item_book_type" android:padding="3dp"
+            style="@style/item_h4" android:text="少年漫画 > 日本漫画 已完结"/>
+        <TextView android:id="@+id/tv_item_book_time" android:padding="3dp"
+            style="@style/item_h4" android:text="20150404"/>
+        <TextView android:id="@+id/tv_item_book_save"
+            android:paddingLeft="10dp" android:paddingRight="10dp" android:paddingBottom="5dp" android:paddingTop="5dp"
+            android:background="@drawable/bg_btn_5"
+            style="@style/item_h4" android:text="收藏"/>
+    </LinearLayout>
+</LinearLayout>

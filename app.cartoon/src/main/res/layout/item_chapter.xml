@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    style="@style/match_wrap"
+    android:background="@drawable/bg_item_divider"
+    android:padding="5dp"
+    >
+    <TextView android:id="@+id/tv_item_chapter_name" android:padding="3dp" android:gravity="center_horizontal"
+        style="@style/item_h2"  android:layout_width="match_parent" android:text="第15话 运动会风波"/>
+</LinearLayout>

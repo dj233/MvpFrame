@@ -66,11 +66,27 @@
         <item name="android:contentDescription">@string/def_img_description</item>
     </style>
 
+    <style name="item_img_left_120x160">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:contentDescription">@string/def_img_description</item>
+    </style>
+
     <style name="item_img_middle_360x180">
         <item name="android:layout_width">360dp</item>
         <item name="android:layout_height">180dp</item>
         <item name="android:scaleType">centerCrop</item>
         <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:contentDescription">@string/def_img_description</item>
+    </style>
+
+    <style name="item_img_middle_360x450">
+        <item name="android:layout_width">360dp</item>
+        <item name="android:layout_height">450dp</item>
+        <item name="android:scaleType">centerCrop</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:contentDescription">@string/def_img_description</item>
     </style>

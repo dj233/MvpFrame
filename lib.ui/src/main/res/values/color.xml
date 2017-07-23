@@ -13,9 +13,9 @@
     <!-- 列表字体颜色 -->
     <color name="item_h1">#1f1f1f</color>
     <color name="item_h2">#242424</color>
-    <color name="item_h3">#2f2f2f</color>
-    <color name="item_h4">#353535</color>
-    <color name="item_h5">#3f3f3f</color>
+    <color name="item_h3">#323232</color>
+    <color name="item_h4">#434343</color>
+    <color name="item_h5">#555555</color>
 
 
 </resources>

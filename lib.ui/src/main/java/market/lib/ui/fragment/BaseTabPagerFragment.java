@@ -35,12 +35,24 @@ public abstract class BaseTabPagerFragment<T> extends Fragment implements View.O
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         tabs = view.findViewById(R.id.tabs);
+        tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
         viewPager = view.findViewById(R.id.viewpager);
         fbShare = view.findViewById(R.id.fab_share);
         fbShare.setOnClickListener(this);
+        if(hideFloatActionBar()){
+            fbShare.setVisibility(View.GONE);
+        }
         bindTabPager();
         presenter = getPresenter();
         presenter.reqTabs();
+    }
+
+    protected  @TabLayout.Mode int getTabMode(){
+        return TabLayout.MODE_SCROLLABLE;
+    }
+
+    protected boolean hideFloatActionBar(){
+        return false;
     }
 
     private void bindTabPager(){

@@ -117,7 +117,7 @@ public abstract class BaseFragment extends Fragment {
         //数据加载完成,假如数据加载又成功了,而且没有初始化过成功视图
         if (mCurState == STATE_SUCCESS) {
             mSuccessView.setVisibility(View.VISIBLE);
-            mEmptyView.setVisibility(View.GONE);
+//            mEmptyView.setVisibility(View.GONE);
             mLoadingView.setVisibility(View.GONE);
             mSuccessView.setVisibility(View.GONE);
         } else {

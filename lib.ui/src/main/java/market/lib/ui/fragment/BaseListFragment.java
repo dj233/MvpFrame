@@ -20,7 +20,7 @@ import market.lib.ui.adapter.RecyclerAdapter;
 import market.lib.ui.presenter.BaseListContract;
 
 
-public abstract class BaseListFragment<T> extends BaseFragment implements BaseListContract.IView<T>,OnHeaderRefreshListener,
+public abstract class BaseListFragment<T> extends Fragment implements BaseListContract.IView<T>,OnHeaderRefreshListener,
         OnFooterRefreshListener{
     protected UltimateRefreshView refreshView;
     private RecyclerView recyclerView;
@@ -30,9 +30,17 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     protected int page = 1;
     protected int pageSize = 30;
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_list,null);
+        return view;
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getIntentValue(getArguments());
         overrideParentValue();
         refreshView = (UltimateRefreshView) view.findViewById(R.id.refresh_view);
         initRefreshAdapter();
@@ -44,8 +52,6 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
         recyclerView.setLayoutManager(initLayoutManager());
         mPresenter = initPresenter();
         mPresenter.refresh(pageSize);
-
-        getIntentValue(getArguments());
     }
 
     protected void overrideParentValue(){
@@ -68,26 +74,26 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
 
     @Override
     public void onRefresh(List<T> data) {
-        setState(LoadedResult.SUCCESS);
+//        setState(LoadedResult.SUCCESS);
         mAdapter.refresh(data);
         refreshView.onHeaderRefreshComplete();
     }
 
     @Override
     public void onAdd(List<T> data) {
-        setState(LoadedResult.SUCCESS);
+//        setState(LoadedResult.SUCCESS);
         mAdapter.addAll(data);
-        page ++;
         refreshView.onFooterRefreshComplete();
     }
 
     @Override
     public void onError(Throwable e) {
-        setState(LoadedResult.ERROR);
+//        setState(LoadedResult.ERROR);
     }
 
     @Override
     public void onFooterRefresh(UltimateRefreshView view) {
+        page ++;
         mPresenter.add(page,pageSize);
     }
 
@@ -95,20 +101,20 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     public void onHeaderRefresh(UltimateRefreshView view) {
         mPresenter.refresh(pageSize);
     }
-
-    @Override
-    public void onRetryClick() {
-        super.onRetryClick();
-        setState(LoadedResult.LOADING);
-        if(page == 0){
-            mPresenter.refresh(pageSize);
-        }else{
-            mPresenter.add(page,pageSize);
-        }
-    }
-
-    @Override
-    public int getLayoutId() {
-        return R.layout.fragment_list;
-    }
+//
+//    @Override
+//    public void onRetryClick() {
+//        super.onRetryClick();
+//        setState(LoadedResult.LOADING);
+//        if(page == 0){
+//            mPresenter.refresh(pageSize);
+//        }else{
+//            mPresenter.add(page,pageSize);
+//        }
+//    }
+//
+//    @Override
+//    public int getLayoutId() {
+//        return R.layout.fragment_list;
+//    }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 import market.lib.ui.viewholder.BaseViewHolder;
 
 public abstract class RecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
-    private Context mContext;
+    protected Context mContext;
     private List<T> mData;
     private OnItemClickListener<T> onItemClickListener;
     private OnItemLongClickListener<T> onItemLongClickListener;

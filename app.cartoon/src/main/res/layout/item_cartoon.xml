@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    style="@style/match_wrap"
+    android:background="@drawable/bg_item_divider"
+    android:padding="5dp"
+    >
+    <ImageView android:id="@+id/iv_item_cartoon"
+        style="@style/item_img_middle_360x450"/>
+</LinearLayout>

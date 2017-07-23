@@ -9,7 +9,9 @@ import com.market.healthy.presenter.cateTab.CateTabPagerPresenter;
 
 import java.util.List;
 
+import market.lib.ui.adapter.TabPageAdapter;
 import market.lib.ui.fragment.BaseTabPagerFragment;
+import market.lib.ui.presenter.BaseTabContract;
 
 public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements CateTabPagerContract.IView{
 
@@ -23,12 +25,6 @@ public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements 
     }
 
     @Override
-    protected void reqTabs() {
-        presenter = new CateTabPagerPresenter(this);
-        presenter.reqCateList();
-    }
-
-    @Override
     public void onCateLoad(List<Cate> cateList) {
         setTabPagerAdapter(new CateTabPagerAdapter(getFragmentManager(),cateList));
     }
@@ -36,5 +32,15 @@ public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements 
     @Override
     public void onError(Throwable e) {
 
+    }
+
+    @Override
+    protected BaseTabContract.IPresenter getPresenter() {
+        return null;
+    }
+
+    @Override
+    protected TabPageAdapter<Cate> getTabPagerAdapter(List<Cate> tabs) {
+        return null;
     }
 }

@@ -1,1 +1,1 @@
-include ':lib.data', ':lib.ui', ':app.healthy', ':app.news'
+include ':lib.data', ':lib.ui', ':app.healthy', ':app.news', ':app.cartoon'
