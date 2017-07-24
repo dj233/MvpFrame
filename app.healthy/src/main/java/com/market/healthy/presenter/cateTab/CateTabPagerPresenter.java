@@ -6,20 +6,22 @@ import com.market.healthy.net.HealthReq;
 
 import java.util.List;
 
+import market.lib.ui.fragment.BaseTabPagerFragment;
+import market.lib.ui.presenter.BaseTabContract;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class CateTabPagerPresenter implements CateTabPagerContract.IPresenter {
+public class CateTabPagerPresenter implements BaseTabContract.IPresenter {
 
-    CateTabPagerContract.IView view;
+    BaseTabContract.IView view;
 
-    public CateTabPagerPresenter(CateTabPagerContract.IView view) {
+    public CateTabPagerPresenter(BaseTabContract.IView view) {
         this.view = view;
     }
 
     @Override
-    public void reqCateList() {
+    public void reqTabs() {
         HealthReq.$().listCate()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -36,7 +38,7 @@ public class CateTabPagerPresenter implements CateTabPagerContract.IPresenter {
 
                     @Override
                     public void onNext(Rsp<List<Cate>> listRsp) {
-                        view.onCateLoad(listRsp.getResult());
+                        view.onTabLoad(listRsp.getResult());
                     }
                 });
     }

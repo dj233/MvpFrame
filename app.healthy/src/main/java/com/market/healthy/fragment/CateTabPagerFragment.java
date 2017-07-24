@@ -4,16 +4,17 @@ import android.os.Bundle;
 
 import com.market.healthy.adapter.CateTabPagerAdapter;
 import com.market.healthy.entity.Cate;
-import com.market.healthy.presenter.cateTab.CateTabPagerContract;
 import com.market.healthy.presenter.cateTab.CateTabPagerPresenter;
 
 import java.util.List;
 
+import market.lib.ui.adapter.TabPageAdapter;
 import market.lib.ui.fragment.BaseTabPagerFragment;
+import market.lib.ui.presenter.BaseTabContract;
 
-public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements CateTabPagerContract.IView{
+public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements BaseTabContract.IView<Cate>{
 
-    private CateTabPagerContract.IPresenter presenter;
+    private BaseTabContract.IPresenter presenter;
 
     public static CateTabPagerFragment newInstance(){
         Bundle args = new Bundle();
@@ -23,14 +24,18 @@ public class CateTabPagerFragment extends BaseTabPagerFragment<Cate> implements 
     }
 
     @Override
-    protected void reqTabs() {
-        presenter = new CateTabPagerPresenter(this);
-        presenter.reqCateList();
+    protected BaseTabContract.IPresenter getPresenter() {
+        return new CateTabPagerPresenter(this);
     }
 
     @Override
-    public void onCateLoad(List<Cate> cateList) {
-        setTabPagerAdapter(new CateTabPagerAdapter(getFragmentManager(),cateList));
+    protected TabPageAdapter<Cate> getTabPagerAdapter(List<Cate> tabs) {
+        return new CateTabPagerAdapter(getFragmentManager(),tabs);
+    }
+
+    @Override
+    public void onTabLoad(List<Cate> tabs) {
+        setTabPagerAdapter(new CateTabPagerAdapter(getFragmentManager(),tabs));
     }
 
     @Override

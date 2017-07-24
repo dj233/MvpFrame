@@ -15,7 +15,7 @@ import rx.Observable;
 public interface Api {
 
     String URL = "http://japi.juhe.cn/";
-    String AppKey = "0eaafec239ac29adb09f2c0ad08f90cc";
+    String AppKey = "4576e0c9bf371305d301b4fab596f035";
 
     @GET("/health_knowledge/categoryList")
     Observable<Rsp<List<Cate>>> cateList(@Query("key") String appKey);

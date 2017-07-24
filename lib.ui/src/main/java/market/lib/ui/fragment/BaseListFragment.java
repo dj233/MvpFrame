@@ -68,14 +68,14 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
 
     @Override
     public void onRefresh(List<T> data) {
-        setState(LoadedResult.SUCCESS);
+//        setState(LoadedResult.SUCCESS);
         mAdapter.refresh(data);
         refreshView.onHeaderRefreshComplete();
     }
 
     @Override
     public void onAdd(List<T> data) {
-        setState(LoadedResult.SUCCESS);
+//        setState(LoadedResult.SUCCESS);
         mAdapter.addAll(data);
         page ++;
         refreshView.onFooterRefreshComplete();
@@ -83,7 +83,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
 
     @Override
     public void onError(Throwable e) {
-        setState(LoadedResult.ERROR);
+//        setState(LoadedResult.ERROR);
     }
 
     @Override
@@ -99,7 +99,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     @Override
     public void onRetryClick() {
         super.onRetryClick();
-        setState(LoadedResult.LOADING);
+//        setState(LoadedResult.LOADING);
         if(page == 0){
             mPresenter.refresh(pageSize);
         }else{

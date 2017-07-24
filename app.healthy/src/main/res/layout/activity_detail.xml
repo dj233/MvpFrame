@@ -42,9 +42,9 @@
     <android.support.v4.widget.NestedScrollView style="@style/match_match" android:padding="12dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout style="@style/match_wrap" android:orientation="vertical">
-            <TextView android:id="@+id/tv_info_title"  style="@style/item_h2" />
-            <TextView android:id="@+id/tv_info_description"  style="@style/item_h3" />
-            <TextView android:id="@+id/tv_info_content"  style="@style/item_h4" />
+            <TextView android:id="@+id/tv_info_title"  style="@style/item_h2"  />
+            <TextView android:id="@+id/tv_info_description"  style="@style/item_h3"  />
+            <WebView android:id="@+id/wv_info_content" style="@style/match_match" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

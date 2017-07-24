@@ -27,7 +27,9 @@ public class NewInfoListFragment extends BaseListFragment  implements RecyclerAd
 
     @Override
     protected RecyclerAdapter initAdapter() {
-        return new DetailAdapter(getContext());
+        RecyclerAdapter adapter = new DetailAdapter(getContext());
+        adapter.setOnItemClickListener(this);
+        return adapter;
     }
 
     @Override
