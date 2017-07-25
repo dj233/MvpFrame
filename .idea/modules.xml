@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CookBook/CookBook.iml" filepath="$PROJECT_DIR$/CookBook/CookBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/MvpFrame.iml" filepath="$PROJECT_DIR$/MvpFrame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.healthy/app.healthy.iml" filepath="$PROJECT_DIR$/app.healthy/app.healthy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.joke/app.joke.iml" filepath="$PROJECT_DIR$/app.joke/app.joke.iml" />

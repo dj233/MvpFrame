@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" style="@style/match_wrap"
+    android:background="@drawable/bg_item_divider" android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_item_book_name" android:padding="5dp"
+        android:text="一些特殊体质的人就不宜常吃粗粮"
+        style="@style/item_h1" />
+
+    <ImageView
+        android:id="@+id/iv_item_book_img"
+        style="@style/item_img_middle_360x360" />
+
+</LinearLayout>
