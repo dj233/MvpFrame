@@ -68,6 +68,6 @@ public class SavedInfoListFragment extends NewInfoListFragment {
 
     @Override
     protected void initRefreshAdapter() {
-        refreshView.setBaseHeaderAdapter();
+
     }
 }
