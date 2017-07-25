@@ -34,6 +34,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         overrideParentValue();
+        getIntentValue(getArguments());
         refreshView = (UltimateRefreshView) view.findViewById(R.id.refresh_view);
         initRefreshAdapter();
         refreshView.setOnHeaderRefreshListener(this);
@@ -44,8 +45,6 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
         recyclerView.setLayoutManager(initLayoutManager());
         mPresenter = initPresenter();
         mPresenter.refresh(pageSize);
-
-        getIntentValue(getArguments());
     }
 
     protected void overrideParentValue(){
@@ -76,14 +75,16 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     @Override
     public void onAdd(List<T> data) {
 //        setState(LoadedResult.SUCCESS);
-        mAdapter.addAll(data);
         page ++;
+        mAdapter.addAll(data);
         refreshView.onFooterRefreshComplete();
     }
 
     @Override
     public void onError(Throwable e) {
 //        setState(LoadedResult.ERROR);
+        refreshView.onHeaderRefreshComplete();
+        refreshView.onFooterRefreshComplete();
     }
 
     @Override
