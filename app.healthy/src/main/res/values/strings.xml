@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">健康知识大全</string>
+    <string name="app_name">健康指南</string>
     <string name="title_activity_home">主页</string>
     <string name="menu_home">最新</string>
     <string name="menu_type">分类</string>
