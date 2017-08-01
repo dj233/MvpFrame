@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         View naviHeadLayout = navigationView.getHeaderView(0);
-        ImageView ivNavHead = naviHeadLayout.findViewById(R.id.iv_nav_head);
+        ImageView ivNavHead = (ImageView) naviHeadLayout.findViewById(R.id.iv_nav_head);
         Log.e("HDJ","ivNavHead : " + ivNavHead);
         Glide.with(this).load("http://www.hqlednews.com/file/Images/upload/2015-09-09/1e584238-4d65-4c9c-8e50-6b37ea67271b.gif").into(ivNavHead);
 
