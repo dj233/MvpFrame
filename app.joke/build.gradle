@@ -8,8 +8,8 @@ android {
         applicationId "com.fly.market.joke"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 104
+        versionName "1.0.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 

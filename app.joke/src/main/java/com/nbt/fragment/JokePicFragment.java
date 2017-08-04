@@ -38,7 +38,6 @@ public class JokePicFragment extends BaseListFragment<Joke> implements
     @Override
     public void onRefresh(List<Joke> data) {
         super.onRefresh(data);
-        SpfUtils.$().savePicJokeLastPage(page);
     }
 
     @Override

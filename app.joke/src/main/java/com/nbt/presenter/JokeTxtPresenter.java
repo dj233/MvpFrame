@@ -3,6 +3,7 @@ package com.nbt.presenter;
 import com.nbt.entity.JokeData;
 import com.nbt.entity.JokeRsp;
 import com.nbt.net.JokeReq;
+import com.nbt.uitls.SpfUtils;
 
 import market.lib.ui.presenter.BaseListContract;
 import rx.Observer;
@@ -20,7 +21,8 @@ public class JokeTxtPresenter implements BaseListContract.IPresenter {
 
     @Override
     public void refresh(int pageSize) {
-        JokeReq.$().newTxt(1,pageSize)
+        int page = SpfUtils.$().getTxtJokeLastPage();
+        JokeReq.$().newTxt(page,pageSize)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JokeRsp<JokeData>>() {
