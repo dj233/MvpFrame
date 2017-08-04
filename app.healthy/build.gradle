@@ -8,8 +8,8 @@ android {
         applicationId "com.nabt.healthy"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 104
+        versionName "1.0.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -32,4 +32,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':lib.ui')
     compile project(':lib.data')
+
+    //umeng
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

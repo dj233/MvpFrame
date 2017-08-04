@@ -3,6 +3,29 @@
     package="com.market.healthy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- ad start -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- ad end -->
+
+    <!-- Umeng Start -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!-- Umeng End -->
 
     <application
         android:name="com.nabt.healthy.App"
@@ -20,6 +43,41 @@
             </intent-filter>
         </activity>
         <activity android:name="com.nabt.healthy.activity.DetailActivity" />
+
+        <!-- Du Ad Start -->
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="e97b6664" />
+        <!-- for baidu xadsdk internal web-browser -->
+        <!-- 非信息广告必须添加 -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 信息流广告必须添加 -->
+        <activity
+            android:name="com.baidu.mobad.feeds.BaiduActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <!-- Du Ad End -->
+        <!-- GDT Ad Start -->
+        <!-- 声明SDK所需要的组件 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false"></service>
+        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"></activity>
+        <!-- GDT Ad End -->
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5984988e75ca350194000390" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Tencent" />
+
+
     </application>
 
 </manifest>
