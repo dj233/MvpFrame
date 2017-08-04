@@ -8,3 +8,5 @@
 /captures
 .externalNativeBuild
 app.joke/
+CookBook/build/
+app.cartoon/build/
