@@ -27,7 +27,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseLi
     private RecyclerAdapter mAdapter;
     private BaseListContract.IPresenter mPresenter;
 
-    protected int page = 1;
+    protected int page = 0;
     protected int pageSize = 30;
 
     @Override

@@ -2,7 +2,7 @@ package com.dao.wrapper;
 
 import com.dao.db.DbDetailDao;
 import com.dao.entity.DbDetail;
-import com.market.healthy.entity.Detail;
+import com.nabt.healthy.entity.Detail;
 
 import java.util.ArrayList;
 import java.util.List;

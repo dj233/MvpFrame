@@ -34,9 +34,9 @@ public abstract class BaseTabPagerFragment<T> extends Fragment implements View.O
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tabs = view.findViewById(R.id.tabs);
-        viewPager = view.findViewById(R.id.viewpager);
-        fbShare = view.findViewById(R.id.fab_share);
+        tabs = (TabLayout) view.findViewById(R.id.tabs);
+        viewPager = (NoScrollViewPager) view.findViewById(R.id.viewpager);
+        fbShare = (FloatingActionButton) view.findViewById(R.id.fab_share);
         fbShare.setOnClickListener(this);
         bindTabPager();
         presenter = getPresenter();
