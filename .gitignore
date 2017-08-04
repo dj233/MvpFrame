@@ -9,3 +9,5 @@
 .externalNativeBuild
 app.cartoon/
 app.news/
+demo.emptylayout/build/
+lib.emptylayout/build/
