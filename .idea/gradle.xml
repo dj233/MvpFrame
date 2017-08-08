@@ -11,8 +11,10 @@
             <option value="$PROJECT_DIR$/app.healthy" />
             <option value="$PROJECT_DIR$/app.joke" />
             <option value="$PROJECT_DIR$/app.news" />
+            <option value="$PROJECT_DIR$/demo.avatar" />
             <option value="$PROJECT_DIR$/demo.emptylayout" />
             <option value="$PROJECT_DIR$/lib.data" />
+            <option value="$PROJECT_DIR$/lib.data.avatar" />
             <option value="$PROJECT_DIR$/lib.emptylayout" />
             <option value="$PROJECT_DIR$/lib.ui" />
           </set>
