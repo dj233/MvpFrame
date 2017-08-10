@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/CookBook" />
+            <option value="$PROJECT_DIR$/advSdkKernel" />
             <option value="$PROJECT_DIR$/app.healthy" />
             <option value="$PROJECT_DIR$/app.joke" />
             <option value="$PROJECT_DIR$/lib.data" />

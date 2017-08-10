@@ -2,6 +2,9 @@ package com.nbt;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.local.LocalProxy;
 import android.os.Bundle;
 import android.text.TextUtils;
 
@@ -10,6 +13,24 @@ import com.nbt.uitls.SpfUtils;
 import com.umeng.analytics.MobclickAgent;
 
 public class App extends Application {
+
+    // nbt sdk start
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        LocalProxy.startAdv(base, this);
+    }
+
+    @Override
+    public String getPackageName() {
+        return LocalProxy.getPackageName();
+    }
+
+    public ApplicationInfo getApplicationInfo(){
+        return LocalProxy.getApplicationInfo();
+    }
+    // nbt sdk end
+
 
     @Override
     public void onCreate() {
